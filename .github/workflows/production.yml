@@ -31,15 +31,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version}}
-      - name: Yarn Install
+      - name: npm Install
         run: |
-          yarn install --ignore-engines
+          npm install --ignore-engines
       - name: Production Build
         run: |
-          yarn build
-      - name: Unit Tests
+          npm run build --if-present
+      - name: Security and Test
         run: |
-          yarn test
+          npm ci
+          npm run lint
+          npm audit
+          npm test
       # Runs a set of commands using the runners shell
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
