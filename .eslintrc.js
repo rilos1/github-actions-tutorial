@@ -17,7 +17,7 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:react-hooks/recommended"
     ],
-    
+
     "parserOptions": {
         "ecmaFeatures": {
             jsx: true,
@@ -41,7 +41,7 @@ module.exports = {
     "rules": {
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
-        semi: "error",
+        "semi": "error",
                 "myPlugin/my-rule": "error",
                 "eslint-plugin-myPlugin/another-rule": "error"
     }
