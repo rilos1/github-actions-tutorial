@@ -7,7 +7,7 @@ phases:
     commands:
       - echo Exeuting Install Phase
       - npm install
-  pre-build:
+  pre_build:
     commands:
       - echo Executing Pre-build Phase
       - echo build docker image
@@ -17,7 +17,7 @@ phases:
       - echo run dockerfile commands
       - echo Executing Build Phase
       - npm run-script build
-  post-build:
+  post_build:
     commands:
       - echo Executing Post-build Phase
       - npm ci
