@@ -1,0 +1,30 @@
+version: 0.2 #find out version
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - echo Exeuting Install Phase
+      - npm install
+  pre-build:
+    commands:
+      - echo Executing Pre-build Phase
+      - echo build docker image
+      - echo scan docker image
+  build:
+    commands:
+      - echo run dockerfile commands
+      - echo Executing Build Phase
+      - npm run-script build
+  post-build:
+    commands:
+      - echo Executing Post-build Phase
+      - npm ci
+      - npm run lint
+      - npm audit
+      - npm test
+artifacts:
+  files:
+    - '**/*'
+  
